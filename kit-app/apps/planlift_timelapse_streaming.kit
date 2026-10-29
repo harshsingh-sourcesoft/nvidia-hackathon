@@ -1,0 +1,177 @@
+[package]
+title = "PlanLift Timelapse Viewer (Streaming)"
+description = "Same as planlift_timelapse.kit, plus omni.kit.livestream.app for WebRTC browser streaming. Kept as a separate file on purpose — see README_STREAMING_TEST.md in this folder — so the existing non-streaming launch path (api_server_mrcnn.py's _isaac_worker_mrcnn) is completely untouched."
+version = "1.1.0"
+keywords = ["experience", "app", "usd"]
+
+
+[dependencies]
+# ── Minimal Kit UI + renderer (viewer only) ──────────────────────────────────
+"omni.hydra.rtx" = {}
+"omni.hydra.engine.stats" = {}
+"omni.kit.mainwindow" = {}
+"omni.kit.manipulator.camera" = {}
+"omni.kit.manipulator.prim" = {}
+"omni.kit.manipulator.selection" = {}
+"omni.kit.material.library" = {}
+"omni.kit.menu.utils" = {}
+"omni.kit.viewport.window" = {}
+"omni.kit.window.status_bar" = {}
+"omni.kit.tool.asset_importer" = {}
+"omni.rtx.settings.core" = {}
+
+# ── Camera and gizmo visibility ───────────────────────────────────────────────
+"omni.kit.viewport.legacy_gizmos"    = {}
+"omni.kit.viewport.scene_camera_model" = {}
+
+# ── Viewport toolbar (RTX mode selector, eye icon, camera/perspective picker) ─
+"omni.kit.viewport.menubar.render"   = {}
+"omni.kit.viewport.menubar.camera"   = {}
+"omni.kit.viewport.menubar.display"  = {}
+"omni.kit.viewport.menubar.settings" = {}
+
+# ── Stage and Properties panels ──────────────────────────────────────────────
+"omni.kit.window.stage"    = {}
+"omni.kit.window.property" = {}
+"omni.kit.property.bundle" = {}
+
+# ── Custom PlanLift extensions ───────────────────────────────────────────────
+"env_day_cycle" = {}
+"planlift.ui_setup"   = { order = 10000 }
+"floorplan.tool"      = { order = 10001 }
+"planlift.floorview"  = { order = 10002 }
+
+# ── WebRTC browser streaming — the only real addition vs planlift_timelapse.kit ─
+"omni.kit.livestream.app" = {}
+
+
+[settings]
+app.floorplanTool.lockViewport = false
+exts."omni.kit.material.library".ui_show_list = [
+    "OmniPBR",
+    "OmniGlass",
+    "OmniSurface",
+    "USD Preview Surface",
+]
+exts."omni.kit.viewport.window".windowMenu.entryCount = 2
+exts."omni.kit.viewport.window".windowMenu.label = ""
+exts."omni.usd".locking.onClose = false
+renderer.asyncInit = false
+renderer.multiGpu.enabled = false
+renderer.multiGpu.autoEnable = false
+rtx-transient.dlssg.enabled = false
+rtx.post.dlss.execMode = 0
+# "RaytracedLighting" is the DEPRECATED real-time renderer (disabled by
+# default in this build -- /persistent/rtx/modes/rt/enabled defaults to
+# false), not the "RTX - Real-Time 2.0" one actually wanted. Verified
+# against omni.kit.viewport.menubar.render's own hd_renderer_list.py:
+# "RealTimePathTracing" is the internal value that maps to "RTX - Real-Time
+# 2.0" in the UI. Using the deprecated/disabled value silently fell back to
+# Path Tracing instead.
+#
+# That alone still wasn't enough: diagnostic logging inside Kit itself
+# (carb.settings.get_settings().get("/rtx/rendermode"), checked right at
+# startup, before anything else runs) confirmed the live value is
+# "PathTracing" from the very first frame -- this CLI value is being
+# overwritten before our own extension even gets control, not overridden
+# later. Root cause, from omni.rtx.settings.core's own extension.py:
+# renderers register in a fixed order (Real-Time, Interactive (Path
+# Tracing), Real-Time 2.0, Minimal) and the first one that's actually
+# ENABLED becomes the default. "Real-Time" (deprecated) is disabled by
+# default here, so "Interactive (Path Tracing)" -- enabled by default --
+# becomes the accidental default instead, regardless of this setting.
+# Disabling Path Tracing's own availability removes it from that race
+# entirely, leaving "Real-Time 2.0" (enabled by default) as the first
+# available renderer.
+persistent.rtx.modes.pt.enabled = false
+persistent.rtx.modes.rt2.enabled = true
+rtx.rendermode = "RealTimePathTracing"
+rtx.pathtracing.maxBounces = 8
+rtx.pathtracing.maxSpecularAndTransmissionBounces = 8
+# Dual-GPU path-tracing settings (rtx.pathtracing.mgpu.*) were tried here and
+# reverted: the two RTX 5080s on this machine have no peer-to-peer access
+# ("Peer access from 0 to 1 is NOT supported", confirmed in Kit's own log),
+# and enabling multi-GPU path-tracing synchronization between GPUs that
+# can't talk to each other directly lines up with a severe stream hang
+# (546 NVST_R_FRAME_DROPPED/NVST_R_BUSY errors, ending in client disconnect)
+# seen right after this was added. Not worth the risk while path tracing
+# itself isn't even wanted right now -- see _enable_path_tracing's removed
+# call site in extension.py for that.
+foundation.verifyOsVersion.enabled = false
+
+[settings."filter:platform"."windows-x86_64"]
+isaac.startup.ros_bridge_extension = ""
+
+[settings.app]
+name = "PlanLift Timelapse Viewer (Streaming)"
+version = "1.1.0"
+content.emptyStageOnStart = true
+fastShutdown = true
+file.ignoreUnsavedOnExit = true
+font.file = "${fonts}/OpenSans-SemiBold.ttf"
+font.size = 16
+hangDetector.enabled = false
+hangDetector.timeout = 600
+enableDeveloperWarnings = false
+vulkan = true
+asyncRendering = false
+
+[settings.app.window]
+title = "PlanLift Timelapse Viewer (Streaming)"
+# drawMouse=false: the WebRTC client draws its own cursor from relayed input
+# events (see isaacsim.exp.full.streaming.kit, the NVIDIA reference app this
+# setting was confirmed against) -- leaving Kit's own cursor on too would
+# double up.
+drawMouse = false
+
+[settings.app.exts.folders]
+'++' = [
+    "${app}",
+    "${app}/../exts",
+    "${kit}/../exts",
+    "${kit}/../extscache",
+    "${kit}/../extsDeprecated",
+    "D:/Piyush/isaac_extensions",
+]
+
+[settings.app.renderer]
+resolution.height = 720
+resolution.width = 1280
+
+[settings.app.viewport]
+defaultCamPos.x = 5
+defaultCamPos.y = 5
+defaultCamPos.z = 5
+defaults.fillViewport = false
+grid.enabled = false
+grid.visible = false
+show.camera = true
+show.lights = false
+
+[settings.persistent]
+app.stage.upAxis = "Z"
+simulation.defaultMetersPerUnit = 1.0
+renderer.startupMessageDisplayed = true
+
+[settings.persistent.app.viewport]
+show.camera = true
+gizmo.scale = 1.0
+gizmo.constantScaleEnabled = true
+gizmo.constantScaleCamera = false
+gizmo.constantScale = 10.0
+
+# ── WebRTC streaming config -- same ports/settings as NVIDIA's own
+# isaacsim.exp.full.streaming.kit reference app, confirmed working in this
+# session's earlier test. ──────────────────────────────────────────────────
+[settings.exts."omni.kit.livestream.app"]
+primaryStream.signalPort = 49100
+primaryStream.streamPort = 47998
+primaryStream.allowDynamicResize = true
+primaryStream.enableEventTracing = true
+primaryStream.enableOpenTelemetry = false
+primaryStream.streamType = "webrtc"
+
+[settings.exts."omni.services.livestream.session"]
+quitOnSessionEnded = true
+resumeTimeoutSeconds = 30
+waitForSessionReadyEvent = false

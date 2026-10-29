@@ -1,0 +1,11 @@
+[package]
+title = "PlanLift Floor View"
+description = "Displays the 2D floor plan image received from the web editor"
+version = "1.0.0"
+
+[dependencies]
+"omni.kit.uiapp" = {}
+"omni.usd"       = {}
+
+[[python.module]]
+name = "planlift_floorview"

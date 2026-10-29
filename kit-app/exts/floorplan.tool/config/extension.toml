@@ -1,0 +1,14 @@
+[package]
+title        = "Floor Plan Tool"
+description  = "Ceiling lights, cameras and rain for floor plan models. Docks into Stage panel."
+version      = "1.0.0"
+category     = "Simulation"
+keywords     = ["light", "camera", "rain", "floor plan"]
+
+[dependencies]
+"omni.kit.uiapp"    = {}
+"omni.usd"          = {}
+"omni.kit.commands" = {}
+
+[[python.module]]
+name = "floorplan.tool"

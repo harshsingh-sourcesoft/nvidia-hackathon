@@ -1,0 +1,7 @@
+[package]
+title = "PlanLift UI Setup"
+description = "Hides default Isaac Sim panels and loads the timelapse USD on startup"
+version = "1.0.0"
+
+[[python.module]]
+name = "planlift_ui_setup"

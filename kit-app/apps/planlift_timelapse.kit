@@ -1,0 +1,172 @@
+[package]
+title = "PlanLift Timelapse Viewer"
+description = "Viewport-only viewer with HDRI day cycle and updated_timelapse.usd preloaded"
+version = "1.1.0"
+keywords = ["experience", "app", "usd"]
+
+
+[dependencies]
+# ── Minimal Kit UI + renderer (viewer only) ──────────────────────────────────
+"omni.hydra.rtx" = {}
+"omni.hydra.engine.stats" = {}
+"omni.kit.mainwindow" = {}
+"omni.kit.manipulator.camera" = {}
+"omni.kit.manipulator.prim" = {}
+"omni.kit.manipulator.selection" = {}
+"omni.kit.material.library" = {}
+"omni.kit.menu.utils" = {}
+"omni.kit.viewport.window" = {}
+"omni.kit.window.status_bar" = {}
+"omni.kit.tool.asset_importer" = {}
+"omni.rtx.settings.core" = {}
+
+# ── Camera and gizmo visibility ───────────────────────────────────────────────
+# legacy_gizmos draws the camera frustum wireframe, light shapes, and selection
+# box — the physical camera mesh you see when "Show By Type → Cameras" is on.
+# scene_camera_model populates the Perspective picker with camera prims.
+"omni.kit.viewport.legacy_gizmos"    = {}
+"omni.kit.viewport.scene_camera_model" = {}
+
+# ── Viewport toolbar (RTX mode selector, eye icon, camera/perspective picker) ─
+# These add the standard top-bar buttons visible in full Isaac Sim:
+#   [RTX-Real-Time ▾]  [👁 ▾]  [Perspective ▾]
+"omni.kit.viewport.menubar.render"   = {}   # RTX / Path-Traced mode dropdown
+"omni.kit.viewport.menubar.camera"   = {}   # Perspective / camera-prim selector
+"omni.kit.viewport.menubar.display"  = {}   # Eye icon — visibility / render settings
+"omni.kit.viewport.menubar.settings" = {}   # Gear / settings icon
+
+# ── Stage and Properties panels ──────────────────────────────────────────────
+"omni.kit.window.stage"    = {}
+"omni.kit.window.property" = {}
+"omni.kit.property.bundle" = {}
+
+# ── Custom PlanLift extensions ───────────────────────────────────────────────
+"env_day_cycle" = {}
+"planlift.ui_setup"   = { order = 10000 }
+"floorplan.tool"      = { order = 10001 }
+"planlift.floorview"  = { order = 10002 }
+
+
+[settings]
+# floorplan.tool viewport takeover — OFF by default so native Isaac Sim
+# navigation (mouse orbit/pan/zoom, WASD fly) and left-click selection stay
+# enabled. Set to true to force the extension's on-screen joystick-only mode.
+app.floorplanTool.lockViewport = false
+exts."omni.kit.material.library".ui_show_list = [
+    "OmniPBR",
+    "OmniGlass",
+    "OmniSurface",
+    "USD Preview Surface",
+]
+exts."omni.kit.viewport.window".windowMenu.entryCount = 2
+exts."omni.kit.viewport.window".windowMenu.label = ""
+exts."omni.usd".locking.onClose = false
+renderer.asyncInit = false
+renderer.multiGpu.enabled = false
+renderer.multiGpu.autoEnable = false
+rtx-transient.dlssg.enabled = false
+rtx.post.dlss.execMode = 0
+# "RaytracedLighting" is the DEPRECATED real-time renderer (disabled by
+# default in this build -- /persistent/rtx/modes/rt/enabled defaults to
+# false), not the "RTX - Real-Time 2.0" one actually wanted. Verified
+# against omni.kit.viewport.menubar.render's own hd_renderer_list.py:
+# "RealTimePathTracing" is the internal value that maps to "RTX - Real-Time
+# 2.0" in the UI. Using the deprecated/disabled value silently fell back to
+# Path Tracing instead.
+#
+# That alone still wasn't enough: diagnostic logging inside Kit itself
+# (carb.settings.get_settings().get("/rtx/rendermode"), checked right at
+# startup, before anything else runs) confirmed the live value is
+# "PathTracing" from the very first frame -- this CLI value is being
+# overwritten before our own extension even gets control, not overridden
+# later. Root cause, from omni.rtx.settings.core's own extension.py:
+# renderers register in a fixed order (Real-Time, Interactive (Path
+# Tracing), Real-Time 2.0, Minimal) and the first one that's actually
+# ENABLED becomes the default. "Real-Time" (deprecated) is disabled by
+# default here, so "Interactive (Path Tracing)" -- enabled by default --
+# becomes the accidental default instead, regardless of this setting.
+# Disabling Path Tracing's own availability removes it from that race
+# entirely, leaving "Real-Time 2.0" (enabled by default) as the first
+# available renderer.
+persistent.rtx.modes.pt.enabled = false
+persistent.rtx.modes.rt2.enabled = true
+rtx.rendermode = "RealTimePathTracing"
+rtx.pathtracing.maxBounces = 8
+rtx.pathtracing.maxSpecularAndTransmissionBounces = 8
+# Dual-GPU path-tracing settings (rtx.pathtracing.mgpu.*) were tried here and
+# reverted: the two RTX 5080s on this machine have no peer-to-peer access
+# ("Peer access from 0 to 1 is NOT supported", confirmed in Kit's own log),
+# and enabling multi-GPU path-tracing synchronization between GPUs that
+# can't talk to each other directly lines up with a severe stream hang
+# (546 NVST_R_FRAME_DROPPED/NVST_R_BUSY errors, ending in client disconnect)
+# seen right after this was added. Not worth the risk while path tracing
+# itself isn't even wanted right now -- see _enable_path_tracing's removed
+# call site in extension.py for that.
+foundation.verifyOsVersion.enabled = false
+
+[settings."filter:platform"."windows-x86_64"]
+isaac.startup.ros_bridge_extension = ""
+
+[settings.app]
+name = "PlanLift Timelapse Viewer"
+version = "1.1.0"
+content.emptyStageOnStart = true
+fastShutdown = true
+file.ignoreUnsavedOnExit = true
+font.file = "${fonts}/OpenSans-SemiBold.ttf"
+font.size = 16
+hangDetector.enabled = false
+hangDetector.timeout = 600
+enableDeveloperWarnings = false
+vulkan = true
+asyncRendering = false
+
+[settings.app.window]
+title = "PlanLift Timelapse Viewer"
+
+[settings.app.exts.folders]
+'++' = [
+    "${app}",
+    "${app}/../exts",
+    "${kit}/../exts",
+    "${kit}/../extscache",
+    "${kit}/../extsDeprecated",
+    "D:/Piyush/isaac_extensions",
+]
+
+[settings.app.renderer]
+# Streaming now reads this as its actual encode resolution — the stream
+# client's own width/height config (IsaacStreamView.tsx) is only an upper
+# bound, not what gets rendered. Was 720p, which is what made the streamed
+# UI look oversized/blurry when stretched to fill a browser tab, regardless
+# of what the client requested.
+resolution.height = 1080
+resolution.width = 1920
+
+[settings.app.viewport]
+defaultCamPos.x = 5
+defaultCamPos.y = 5
+defaultCamPos.z = 5
+# false so the viewport always renders at the fixed 1280x720 resolution
+# set under [settings.app.renderer] above, regardless of how the panel
+# is resized/maximized. With this true, the viewport stretches its render
+# resolution to match the panel's actual pixel size, which drifts away
+# from the cameras' native 16:9 aperture and makes zone-generation's
+# aperture-based raycast disagree with what's actually on screen.
+defaults.fillViewport = false
+grid.enabled = false
+grid.visible = false
+show.camera = true    # singular — the key legacy_gizmos actually reads
+show.lights = false
+
+[settings.persistent]
+app.stage.upAxis = "Z"
+simulation.defaultMetersPerUnit = 1.0
+renderer.startupMessageDisplayed = true
+
+[settings.persistent.app.viewport]
+show.camera = true              # singular — legacy_gizmos reads this key
+gizmo.scale = 1.0               # camera body world-space size (Isaac Sim default)
+gizmo.constantScaleEnabled = true
+gizmo.constantScaleCamera = false   # cameras use world-space scale, not screen-space constant
+gizmo.constantScale = 10.0          # screen-space size for lights/selection (Isaac Sim default)
