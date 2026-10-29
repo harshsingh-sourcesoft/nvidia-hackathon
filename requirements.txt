@@ -1,0 +1,37 @@
+# ── Core ML ──────────────────────────────────────────────────────────────────
+# Install PyTorch separately via setup.bat (CUDA 12.1 wheel)
+# torch>=2.2.0
+# torchvision>=0.17.0
+
+# ── Image processing ──────────────────────────────────────────────────────────
+opencv-python>=4.9.0
+Pillow>=10.3.0
+scikit-image>=0.22.0
+
+# ── Geometry / vectorization ──────────────────────────────────────────────────
+numpy>=1.26.0
+scipy>=1.13.0
+shapely>=2.0.4
+networkx>=3.3
+
+# ── 3D mesh / export ─────────────────────────────────────────────────────────
+trimesh[easy]>=4.3.0
+
+# ── Utilities ─────────────────────────────────────────────────────────────────
+tqdm>=4.66.0
+requests>=2.31.0
+
+# ── AI Furnish (api_server_mrcnn.py's /ai-furnish) ────────────────────────────
+# Only used when ANTHROPIC_API_KEY is set — falls back to a local Ollama
+# model otherwise, which needs no extra Python package.
+anthropic>=0.100.0
+
+# ── AI 3D generation (stage_3dgen.py) ─────────────────────────────────────────
+# Active backend — install before using --ai-3d flag:
+#   git clone https://github.com/Tencent-Hunyuan/Hunyuan3D-2.1
+#   pip install -e Hunyuan3D-2.1/hy3dshape
+#   pip install -e Hunyuan3D-2.1/hy3dpaint
+#
+# Inactive backend (TRELLIS) — un-comment to install:
+#   pip install git+https://github.com/microsoft/TRELLIS.git
+# trellis @ git+https://github.com/microsoft/TRELLIS.git
