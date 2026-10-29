@@ -1,0 +1,38 @@
+venv/
+__pycache__/
+*.pyc
+*.pyo
+weights/
+.env
+*.log
+output/
+input/
+CubiCasa5k-master/
+Materials/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Third-party repo cloned straight into the working tree (has its own .git
+# and .venv) — not PlanLift's own code, don't vendor it in this repo
+HunyuanHunyuan3D-2.1.git/
+
+# Personal screenshot dumps used for sharing/debugging, not project source
+SCREENS/
+SCREENS.zip
+
+# Orphaned leftover from an earlier Isaac Sim debugging session — not
+# referenced by the app (the real door asset lives in PlanLift-Frontend)
+Door.fbx
+
+# frontend/ (Next.js app) build artifacts — regenerate with npm install / npm run build
+frontend/node_modules/
+frontend/.next/
+frontend/*.tsbuildinfo
+frontend/dev.log
+
+# Isaac Sim extension edit backups, e.g. extension.py.bak_20261014_125430
+*.bak_*
