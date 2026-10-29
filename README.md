@@ -83,4 +83,6 @@ MIT — see [`LICENSE`](LICENSE).
 
 ## Feedback on Nebius Token Factory / NVIDIA tools
 
-_`<-- fill in your own experience using Token Factory, Nemotron, and any other Nebius/NVIDIA tooling during the build. -->`_
+Integrating Nebius Token Factory was genuinely fast — the endpoint is OpenAI-chat-completions-compatible, so swapping Nemotron into both the AI Furnishing feature and the Isaac Sim AI Agent was a matter of pointing an existing `/chat/completions` call at a new base URL and model name, not rewriting any request/response handling. That made it easy to run Nemotron side-by-side with our existing providers and compare them directly.
+
+What stood out most was inference speed. Both features depend on the model responding quickly enough to feel interactive — typing a furnishing request or a scene-editing command and actually seeing it happen in a few seconds, not tens of seconds. The Nemotron models on Token Factory were noticeably faster to respond than other models we'd used for the same job before, which made it realistic to call the model directly in the request path instead of needing to design around a slow, queued response.
