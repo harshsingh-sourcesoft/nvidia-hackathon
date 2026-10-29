@@ -1,0 +1,1429 @@
+{
+  "id": "root",
+  "name": "Build",
+  "children": [
+    {
+      "id": "construction",
+      "name": "Construction",
+      "children": [
+        {
+          "id": "archs",
+          "name": "Archs",
+          "children": []
+        },
+        {
+          "id": "doors",
+          "name": "Doors",
+          "children": [
+            {
+              "id": "shutter_closed",
+              "name": "Shutter Closed",
+              "asset": {
+                "elementType": "door",
+                "model": "/models/Build/Doors/Shutter_Closed.glb",
+                "footprint": {
+                  "widthM": 0.9,
+                  "depthM": 0.1,
+                  "heightM": 2.1
+                }
+              },
+              "thumbnail": "/models/library/thumbs/Shutter_Closed.png"
+            },
+            {
+              "id": "shutter_open",
+              "name": "Shutter Open",
+              "asset": {
+                "elementType": "door",
+                "model": "/models/Build/Doors/Shutter_Open.glb",
+                "footprint": {
+                  "widthM": 0.9,
+                  "depthM": 0.1,
+                  "heightM": 2.1
+                }
+              },
+              "thumbnail": "/models/library/thumbs/Shutter_Open.png"
+            },
+            {
+              "id": "door_single_01",
+              "name": "Single",
+              "thumbnail": "/models/library/thumbs/Single_Door.png",
+              "asset": {
+                "elementType": "door",
+                "model": "/models/Build/Doors/Single_Door.glb",
+                "footprint": {
+                  "widthM": 0.9,
+                  "depthM": 0.05,
+                  "heightM": 2.1
+                },
+                "color2D": "#8b6b4a",
+                "isDefault": true
+              }
+            },
+            {
+              "id": "single_door_2",
+              "name": "Single Door 2",
+              "asset": {
+                "elementType": "furniture",
+                "model": "/models/Build/Doors/Single_Door_2.glb",
+                "footprint": {
+                  "widthM": 0.9,
+                  "depthM": 0.1,
+                  "heightM": 2.1
+                }
+              },
+              "thumbnail": "/models/library/thumbs/Single_Door_2.png"
+            },
+            {
+              "id": "sliding_door_2_panel",
+              "name": "Sliding Door 2 Panel",
+              "asset": {
+                "elementType": "door",
+                "model": "/models/Build/Doors/Sliding_Door_2_Panel.glb",
+                "footprint": {
+                  "widthM": 0.9,
+                  "depthM": 0.1,
+                  "heightM": 2.1
+                }
+              },
+              "thumbnail": "/models/library/thumbs/Sliding_Door_2_Panel.png"
+            },
+            {
+              "id": "sliding_door_3_panel",
+              "name": "Sliding Door 3 Panel",
+              "asset": {
+                "elementType": "door",
+                "model": "/models/Build/Doors/Sliding_Door_3_Panel.glb",
+                "footprint": {
+                  "widthM": 0.9,
+                  "depthM": 0.1,
+                  "heightM": 2.1
+                }
+              },
+              "thumbnail": "/models/library/thumbs/Sliding_Door_3_Panel.png"
+            }
+          ]
+        },
+        {
+          "id": "stairs",
+          "name": "Stairs",
+          "children": [
+            {
+              "id": "stairs_semicircle",
+              "name": "Stairs Semicircle",
+              "asset": {
+                "elementType": "furniture",
+                "model": "/models/Build/Stairs/Stairs_SemiCircle.glb",
+                "footprint": {
+                  "widthM": 1.0,
+                  "depthM": 1.0,
+                  "heightM": 1.0
+                }
+              },
+              "thumbnail": "/models/library/thumbs/Stairs_SemiCircle.png"
+            },
+            {
+              "id": "stairs_spiral",
+              "name": "Stairs Spiral",
+              "asset": {
+                "elementType": "furniture",
+                "model": "/models/Build/Stairs/Stairs_Spiral.glb",
+                "footprint": {
+                  "widthM": 1.0,
+                  "depthM": 1.0,
+                  "heightM": 1.0
+                }
+              },
+              "thumbnail": "/models/library/thumbs/Stairs_Spiral.png"
+            }
+          ]
+        },
+        {
+          "id": "windows",
+          "name": "Windows",
+          "children": [
+            {
+              "id": "vertical_window",
+              "name": "Vertical Window",
+              "asset": {
+                "elementType": "window",
+                "model": "/models/Build/Windows/Vertical_Window.glb",
+                "footprint": {
+                  "widthM": 1.2,
+                  "depthM": 0.1,
+                  "heightM": 1.2
+                }
+              },
+              "thumbnail": "/models/library/thumbs/Vertical_Window.png"
+            },
+            {
+              "id": "window_2_door",
+              "name": "Window 2 Door",
+              "asset": {
+                "elementType": "window",
+                "model": "/models/Build/Windows/Window_2_Door.glb",
+                "footprint": {
+                  "widthM": 1.2,
+                  "depthM": 0.1,
+                  "heightM": 1.2
+                },
+                "isDefault": true
+              },
+              "thumbnail": "/models/library/thumbs/Window_2_Door.png"
+            },
+            {
+              "id": "window_3_panel",
+              "name": "Window 3 Panel",
+              "asset": {
+                "elementType": "window",
+                "model": "/models/Build/Windows/Window_3_Panel.glb",
+                "footprint": {
+                  "widthM": 1.2,
+                  "depthM": 0.1,
+                  "heightM": 1.2
+                }
+              },
+              "thumbnail": "/models/library/thumbs/Window_3_Panel.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "furniture",
+      "name": "Furniture",
+      "children": [
+        {
+          "id": "decor",
+          "name": "Decor",
+          "children": [
+            {
+              "id": "banana_plant_pot",
+              "name": "Banana Plant Pot",
+              "asset": {
+                "elementType": "furniture",
+                "model": "/models/Decor/Banana_Plant_Pot.glb",
+                "footprint": {
+                  "widthM": 1.0,
+                  "depthM": 1.0,
+                  "heightM": 1.0
+                }
+              },
+              "thumbnail": "/models/library/thumbs/Banana_Plant_Pot.png"
+            },
+            {
+              "id": "cuban_cigar_plant_pot",
+              "name": "Cuban Cigar Plant Pot",
+              "asset": {
+                "elementType": "furniture",
+                "model": "/models/Decor/Cuban_Cigar_Plant_Pot.glb",
+                "footprint": {
+                  "widthM": 1.0,
+                  "depthM": 1.0,
+                  "heightM": 1.0
+                }
+              },
+              "thumbnail": "/models/library/thumbs/Cuban_Cigar_Plant_Pot.png"
+            },
+            {
+              "id": "dieffenbachia_plant_pot",
+              "name": "Dieffenbachia Plant Pot",
+              "asset": {
+                "elementType": "furniture",
+                "model": "/models/Decor/Dieffenbachia_Plant_Pot.glb",
+                "footprint": {
+                  "widthM": 1.0,
+                  "depthM": 1.0,
+                  "heightM": 1.0
+                }
+              },
+              "thumbnail": "/models/library/thumbs/Dieffenbachia_Plant_Pot.png"
+            },
+            {
+              "id": "erica_plant_pot",
+              "name": "Erica Plant Pot",
+              "asset": {
+                "elementType": "furniture",
+                "model": "/models/Decor/Erica_Plant_Pot.glb",
+                "footprint": {
+                  "widthM": 1.0,
+                  "depthM": 1.0,
+                  "heightM": 1.0
+                }
+              },
+              "thumbnail": "/models/library/thumbs/Erica_Plant_Pot.png"
+            },
+            {
+              "id": "lamp",
+              "name": "Lamp",
+              "asset": {
+                "elementType": "furniture",
+                "model": "/models/Decor/Lamp.glb",
+                "footprint": {
+                  "widthM": 1.0,
+                  "depthM": 1.0,
+                  "heightM": 1.0
+                }
+              },
+              "thumbnail": "/models/library/thumbs/Lamp.png"
+            },
+            {
+              "id": "monstera_plant_pot",
+              "name": "Monstera Plant Pot",
+              "asset": {
+                "elementType": "furniture",
+                "model": "/models/Decor/Monstera_Plant_Pot.glb",
+                "footprint": {
+                  "widthM": 1.0,
+                  "depthM": 1.0,
+                  "heightM": 1.0
+                }
+              },
+              "thumbnail": "/models/library/thumbs/Monstera_Plant_Pot.png"
+            },
+            {
+              "id": "plant",
+              "name": "Plant",
+              "asset": {
+                "elementType": "furniture",
+                "model": "/models/Decor/Plant.glb",
+                "footprint": {
+                  "widthM": 1.0,
+                  "depthM": 1.0,
+                  "heightM": 1.0
+                }
+              },
+              "thumbnail": "/models/library/thumbs/Plant.png"
+            },
+            {
+              "id": "plant_pot",
+              "name": "Plant Pot",
+              "asset": {
+                "elementType": "furniture",
+                "model": "/models/Decor/Plant_Pot.glb",
+                "footprint": {
+                  "widthM": 1.0,
+                  "depthM": 1.0,
+                  "heightM": 1.0
+                }
+              },
+              "thumbnail": "/models/library/thumbs/Plant_Pot.png"
+            },
+            {
+              "id": "spider_plant_pot",
+              "name": "Spider Plant Pot",
+              "asset": {
+                "elementType": "furniture",
+                "model": "/models/Decor/Spider_Plant_Pot.glb",
+                "footprint": {
+                  "widthM": 1.0,
+                  "depthM": 1.0,
+                  "heightM": 1.0
+                }
+              },
+              "thumbnail": "/models/library/thumbs/Spider_Plant_Pot.png"
+            }
+          ],
+          "thumbnail": "/models/library/category_thumbs/decor.jpg"
+        },
+        {
+          "id": "bedroom",
+          "name": "Bedroom",
+          "children": [
+            {
+              "id": "double_beds",
+              "name": "Double Beds",
+              "children": [
+                {
+                  "id": "bed",
+                  "name": "Bed",
+                  "asset": {
+                    "elementType": "furniture",
+                    "model": "/models/Furnish/Bedroom/Double Beds/Bed.glb",
+                    "footprint": {
+                      "widthM": 1.0,
+                      "depthM": 1.0,
+                      "heightM": 1.0
+                    }
+                  },
+                  "thumbnail": "/models/library/thumbs/Bed.png"
+                },
+                {
+                  "id": "bed_01",
+                  "name": "Bed",
+                  "thumbnail": "/models/library/thumbs/bed_01.png",
+                  "asset": {
+                    "elementType": "furniture",
+                    "model": "/models/Furnish/Bedroom/Double Beds/bed_01.glb",
+                    "footprint": {
+                      "widthM": 1.5,
+                      "depthM": 2.0,
+                      "heightM": 0.6
+                    }
+                  }
+                },
+                {
+                  "id": "bed_double",
+                  "name": "Bed Double",
+                  "asset": {
+                    "elementType": "furniture",
+                    "model": "/models/Furnish/Bedroom/Double Beds/Bed_Double.glb",
+                    "footprint": {
+                      "widthM": 1.0,
+                      "depthM": 1.0,
+                      "heightM": 1.0
+                    }
+                  },
+                  "thumbnail": "/models/library/thumbs/Bed_Double.png"
+                }
+              ],
+              "thumbnail": "/models/library/category_thumbs/double_beds.jpg"
+            },
+            {
+              "id": "single_beds",
+              "name": "Single Beds",
+              "children": [
+                {
+                  "id": "bed_02",
+                  "name": "Bed 2",
+                  "thumbnail": "/models/library/thumbs/bed_02.png",
+                  "asset": {
+                    "elementType": "furniture",
+                    "model": "/models/Furnish/Bedroom/Single Beds/bed_02.glb",
+                    "footprint": {
+                      "widthM": 1.4,
+                      "depthM": 1.9,
+                      "heightM": 0.55
+                    }
+                  }
+                }
+              ],
+              "thumbnail": "/models/library/category_thumbs/single_beds.jpg"
+            }
+          ],
+          "thumbnail": "/models/library/category_thumbs/bedroom.jpg"
+        },
+        {
+          "id": "industrial",
+          "name": "Industrial",
+          "children": [
+            {
+              "id": "forklift_01",
+              "name": "Forklift",
+              "thumbnail": "/models/library/thumbs/forklift_truck.png",
+              "asset": {
+                "elementType": "furniture",
+                "model": "/models/Furnish/Industrial/forklift_truck.glb",
+                "footprint": {
+                  "widthM": 1.2,
+                  "depthM": 2.3,
+                  "heightM": 2.1
+                }
+              }
+            },
+            {
+              "id": "handtruck",
+              "name": "Handtruck",
+              "asset": {
+                "elementType": "furniture",
+                "model": "/models/Furnish/Industrial/HandTruck.glb",
+                "footprint": {
+                  "widthM": 1.0,
+                  "depthM": 1.0,
+                  "heightM": 1.0
+                }
+              },
+              "thumbnail": "/models/library/thumbs/HandTruck.png"
+            },
+            {
+              "id": "pallet_jack",
+              "name": "Pallet Jack",
+              "asset": {
+                "elementType": "furniture",
+                "model": "/models/Furnish/Industrial/Pallet_Jack.glb",
+                "footprint": {
+                  "widthM": 1.0,
+                  "depthM": 1.0,
+                  "heightM": 1.0
+                }
+              },
+              "thumbnail": "/models/library/thumbs/Pallet_Jack.png"
+            },
+            {
+              "id": "pile",
+              "name": "Pile",
+              "asset": {
+                "elementType": "furniture",
+                "model": "/models/Furnish/Industrial/Pile.glb",
+                "footprint": {
+                  "widthM": 1.0,
+                  "depthM": 1.0,
+                  "heightM": 1.0
+                }
+              },
+              "thumbnail": "/models/library/thumbs/Pile.png"
+            },
+            {
+              "id": "pile1",
+              "name": "Pile1",
+              "asset": {
+                "elementType": "furniture",
+                "model": "/models/Furnish/Industrial/Pile1.glb",
+                "footprint": {
+                  "widthM": 1.0,
+                  "depthM": 1.0,
+                  "heightM": 1.0
+                }
+              },
+              "thumbnail": "/models/library/thumbs/Pile1.png"
+            },
+            {
+              "id": "rack_large",
+              "name": "Rack Large",
+              "asset": {
+                "elementType": "furniture",
+                "model": "/models/Furnish/Industrial/Rack_Large.glb",
+                "footprint": {
+                  "widthM": 1.0,
+                  "depthM": 1.0,
+                  "heightM": 1.0
+                }
+              },
+              "thumbnail": "/models/library/thumbs/Rack_Large.png"
+            },
+            {
+              "id": "rack_large_empty",
+              "name": "Rack Large Empty",
+              "asset": {
+                "elementType": "furniture",
+                "model": "/models/Furnish/Industrial/Rack_Large_Empty.glb",
+                "footprint": {
+                  "widthM": 1.0,
+                  "depthM": 1.0,
+                  "heightM": 1.0
+                }
+              },
+              "thumbnail": "/models/library/thumbs/Rack_Large_Empty.png"
+            },
+            {
+              "id": "rack_large_empty_1",
+              "name": "Rack Large Empty 1",
+              "asset": {
+                "elementType": "furniture",
+                "model": "/models/Furnish/Industrial/Rack_Large_Empty_1.glb",
+                "footprint": {
+                  "widthM": 1.0,
+                  "depthM": 1.0,
+                  "heightM": 1.0
+                }
+              },
+              "thumbnail": "/models/library/thumbs/Rack_Large_Empty_1.png"
+            },
+            {
+              "id": "rack_long",
+              "name": "Rack Long",
+              "asset": {
+                "elementType": "furniture",
+                "model": "/models/Furnish/Industrial/Rack_Long.glb",
+                "footprint": {
+                  "widthM": 1.0,
+                  "depthM": 1.0,
+                  "heightM": 1.0
+                }
+              },
+              "thumbnail": "/models/library/thumbs/Rack_Long.png"
+            },
+            {
+              "id": "rack_small",
+              "name": "Rack Small",
+              "asset": {
+                "elementType": "furniture",
+                "model": "/models/Furnish/Industrial/Rack_Small.glb",
+                "footprint": {
+                  "widthM": 1.0,
+                  "depthM": 1.0,
+                  "heightM": 1.0
+                }
+              },
+              "thumbnail": "/models/library/thumbs/Rack_Small.png"
+            },
+            {
+              "id": "warehouse_shelf",
+              "name": "Warehouse Shelf",
+              "asset": {
+                "elementType": "furniture",
+                "model": "/models/Furnish/Industrial/Warehouse_Shelf.glb",
+                "footprint": {
+                  "widthM": 1.0,
+                  "depthM": 1.0,
+                  "heightM": 1.0
+                }
+              },
+              "thumbnail": "/models/library/thumbs/Warehouse_Shelf.png"
+            }
+          ],
+          "thumbnail": "/models/library/category_thumbs/industrial.jpg"
+        },
+        {
+          "id": "living_room",
+          "name": "Living Room",
+          "children": [
+            {
+              "id": "armchairs",
+              "name": "Armchairs",
+              "children": [
+                {
+                  "id": "armchair",
+                  "name": "Armchair",
+                  "asset": {
+                    "elementType": "furniture",
+                    "model": "/models/Furnish/Living Room/Armchairs/Armchair.glb",
+                    "footprint": {
+                      "widthM": 1.0,
+                      "depthM": 1.0,
+                      "heightM": 1.0
+                    }
+                  },
+                  "thumbnail": "/models/library/thumbs/Armchair.png"
+                },
+                {
+                  "id": "armchair_1",
+                  "name": "Armchair 1",
+                  "asset": {
+                    "elementType": "furniture",
+                    "model": "/models/Furnish/Living Room/Armchairs/Armchair_1.glb",
+                    "footprint": {
+                      "widthM": 1.0,
+                      "depthM": 1.0,
+                      "heightM": 1.0
+                    }
+                  },
+                  "thumbnail": "/models/library/thumbs/Armchair_1.png"
+                },
+                {
+                  "id": "armchair_2",
+                  "name": "Armchair 2",
+                  "asset": {
+                    "elementType": "furniture",
+                    "model": "/models/Furnish/Living Room/Armchairs/Armchair_2.glb",
+                    "footprint": {
+                      "widthM": 1.0,
+                      "depthM": 1.0,
+                      "heightM": 1.0
+                    }
+                  },
+                  "thumbnail": "/models/library/thumbs/Armchair_2.png"
+                },
+                {
+                  "id": "armchair_3",
+                  "name": "Armchair 3",
+                  "asset": {
+                    "elementType": "furniture",
+                    "model": "/models/Furnish/Living Room/Armchairs/Armchair_3.glb",
+                    "footprint": {
+                      "widthM": 1.0,
+                      "depthM": 1.0,
+                      "heightM": 1.0
+                    }
+                  },
+                  "thumbnail": "/models/library/thumbs/Armchair_3.png"
+                }
+              ],
+              "thumbnail": "/models/library/category_thumbs/armchairs.jpg"
+            },
+            {
+              "id": "coffee_tables",
+              "name": "Coffee Tables",
+              "children": [
+                {
+                  "id": "coffe_table_dual_set",
+                  "name": "Coffee Table Dual Set",
+                  "asset": {
+                    "elementType": "furniture",
+                    "model": "/models/Furnish/Living Room/Coffee Tables/Coffe_Table_Dual_Set.glb",
+                    "footprint": {
+                      "widthM": 1.0,
+                      "depthM": 1.0,
+                      "heightM": 1.0
+                    }
+                  },
+                  "thumbnail": "/models/library/thumbs/Coffe_Table_Dual_Set.png"
+                },
+                {
+                  "id": "coffe_table_square",
+                  "name": "Coffee Table Square",
+                  "asset": {
+                    "elementType": "furniture",
+                    "model": "/models/Furnish/Living Room/Coffee Tables/Coffe_Table_Square.glb",
+                    "footprint": {
+                      "widthM": 1.0,
+                      "depthM": 1.0,
+                      "heightM": 1.0
+                    }
+                  },
+                  "thumbnail": "/models/library/thumbs/Coffe_Table_Square.png"
+                },
+                {
+                  "id": "coffee_table",
+                  "name": "Coffee Table",
+                  "asset": {
+                    "elementType": "furniture",
+                    "model": "/models/Furnish/Living Room/Coffee Tables/Coffee_Table.glb",
+                    "footprint": {
+                      "widthM": 1.0,
+                      "depthM": 1.0,
+                      "heightM": 1.0
+                    }
+                  },
+                  "thumbnail": "/models/library/thumbs/Coffee_Table.png"
+                },
+                {
+                  "id": "coffee_table_hexagon",
+                  "name": "Coffee Table Hexagon",
+                  "asset": {
+                    "elementType": "furniture",
+                    "model": "/models/Furnish/Living Room/Coffee Tables/Coffee_Table_Hexagon.glb",
+                    "footprint": {
+                      "widthM": 1.0,
+                      "depthM": 1.0,
+                      "heightM": 1.0
+                    }
+                  },
+                  "thumbnail": "/models/library/thumbs/Coffee_Table_Hexagon.png"
+                },
+                {
+                  "id": "coffee_table_oval",
+                  "name": "Coffee Table Oval",
+                  "asset": {
+                    "elementType": "furniture",
+                    "model": "/models/Furnish/Living Room/Coffee Tables/Coffee_Table_Oval.glb",
+                    "footprint": {
+                      "widthM": 1.0,
+                      "depthM": 1.0,
+                      "heightM": 1.0
+                    }
+                  },
+                  "thumbnail": "/models/library/thumbs/Coffee_Table_Oval.png"
+                },
+                {
+                  "id": "coffee_table_oval_1",
+                  "name": "Coffee Table Oval 1",
+                  "asset": {
+                    "elementType": "furniture",
+                    "model": "/models/Furnish/Living Room/Coffee Tables/Coffee_Table_Oval_1.glb",
+                    "footprint": {
+                      "widthM": 1.0,
+                      "depthM": 1.0,
+                      "heightM": 1.0
+                    }
+                  },
+                  "thumbnail": "/models/library/thumbs/Coffee_Table_Oval_1.png"
+                },
+                {
+                  "id": "coffee_table_oval_2",
+                  "name": "Coffee Table Oval 2",
+                  "asset": {
+                    "elementType": "furniture",
+                    "model": "/models/Furnish/Living Room/Coffee Tables/Coffee_Table_Oval_2.glb",
+                    "footprint": {
+                      "widthM": 1.0,
+                      "depthM": 1.0,
+                      "heightM": 1.0
+                    }
+                  },
+                  "thumbnail": "/models/library/thumbs/Coffee_Table_Oval_2.png"
+                },
+                {
+                  "id": "coffee_table_rectangle",
+                  "name": "Coffee Table Rectangle",
+                  "asset": {
+                    "elementType": "furniture",
+                    "model": "/models/Furnish/Living Room/Coffee Tables/Coffee_Table_Rectangle.glb",
+                    "footprint": {
+                      "widthM": 1.0,
+                      "depthM": 1.0,
+                      "heightM": 1.0
+                    }
+                  },
+                  "thumbnail": "/models/library/thumbs/Coffee_Table_Rectangle.png"
+                }
+              ],
+              "thumbnail": "/models/library/category_thumbs/coffee_tables.jpg"
+            },
+            {
+              "id": "dining_table",
+              "name": "Dining Table",
+              "children": [
+                {
+                  "id": "chair_dining_01",
+                  "name": "Dining Chair",
+                  "thumbnail": "/models/library/thumbs/chair_dining_01.png",
+                  "asset": {
+                    "elementType": "furniture",
+                    "model": "/models/Furnish/Living Room/Dining Table/chair_dining_01.glb",
+                    "footprint": {
+                      "widthM": 0.55,
+                      "depthM": 0.55,
+                      "heightM": 0.85
+                    }
+                  }
+                },
+                {
+                  "id": "table_dining_01",
+                  "name": "Dining Table",
+                  "thumbnail": "/models/library/thumbs/table_dining_01.png",
+                  "asset": {
+                    "elementType": "furniture",
+                    "model": "/models/Furnish/Living Room/Dining Table/table_dining_01.glb",
+                    "footprint": {
+                      "widthM": 1.6,
+                      "depthM": 0.9,
+                      "heightM": 0.75
+                    }
+                  }
+                }
+              ],
+              "thumbnail": "/models/library/category_thumbs/dining_table.jpg"
+            },
+            {
+              "id": "sofas",
+              "name": "Sofas",
+              "children": [
+                {
+                  "id": "corner",
+                  "name": "Corner",
+                  "children": [
+                    {
+                      "id": "sofa_corner_1",
+                      "name": "Sofa Corner 1",
+                      "asset": {
+                        "elementType": "furniture",
+                        "model": "/models/Furnish/Living Room/Sofas/Corner/Sofa_Corner_1.glb",
+                        "footprint": {
+                          "widthM": 1.0,
+                          "depthM": 1.0,
+                          "heightM": 1.0
+                        }
+                      },
+                      "thumbnail": "/models/library/thumbs/Sofa_Corner_1.png"
+                    },
+                    {
+                      "id": "sofa_corner_2",
+                      "name": "Sofa Corner 2",
+                      "asset": {
+                        "elementType": "furniture",
+                        "model": "/models/Furnish/Living Room/Sofas/Corner/Sofa_Corner_2.glb",
+                        "footprint": {
+                          "widthM": 1.0,
+                          "depthM": 1.0,
+                          "heightM": 1.0
+                        }
+                      },
+                      "thumbnail": "/models/library/thumbs/Sofa_Corner_2.png"
+                    },
+                    {
+                      "id": "sofa_corner_3",
+                      "name": "Sofa Corner 3",
+                      "asset": {
+                        "elementType": "furniture",
+                        "model": "/models/Furnish/Living Room/Sofas/Corner/Sofa_Corner_3.glb",
+                        "footprint": {
+                          "widthM": 1.0,
+                          "depthM": 1.0,
+                          "heightM": 1.0
+                        }
+                      },
+                      "thumbnail": "/models/library/thumbs/Sofa_Corner_3.png"
+                    },
+                    {
+                      "id": "sofa_corner_4",
+                      "name": "Sofa Corner 4",
+                      "asset": {
+                        "elementType": "furniture",
+                        "model": "/models/Furnish/Living Room/Sofas/Corner/Sofa_Corner_4.glb",
+                        "footprint": {
+                          "widthM": 1.0,
+                          "depthM": 1.0,
+                          "heightM": 1.0
+                        }
+                      },
+                      "thumbnail": "/models/library/thumbs/Sofa_Corner_4.png"
+                    }
+                  ],
+                  "thumbnail": "/models/library/category_thumbs/corner.jpg"
+                },
+                {
+                  "id": "round",
+                  "name": "Round",
+                  "children": [
+                    {
+                      "id": "curved_sofa",
+                      "name": "Curved Sofa",
+                      "asset": {
+                        "elementType": "furniture",
+                        "model": "/models/Furnish/Living Room/Sofas/Round/Curved_Sofa.glb",
+                        "footprint": {
+                          "widthM": 1.0,
+                          "depthM": 1.0,
+                          "heightM": 1.0
+                        }
+                      },
+                      "thumbnail": "/models/library/thumbs/Curved_Sofa.png"
+                    },
+                    {
+                      "id": "sofa_01",
+                      "name": "Sofa",
+                      "thumbnail": "/models/library/thumbs/sofa_01.png",
+                      "asset": {
+                        "elementType": "furniture",
+                        "model": "/models/Furnish/Living Room/Sofas/Round/sofa_01.glb",
+                        "footprint": {
+                          "widthM": 2.0,
+                          "depthM": 0.9,
+                          "heightM": 0.85
+                        }
+                      }
+                    }
+                  ],
+                  "thumbnail": "/models/library/category_thumbs/round.jpg"
+                },
+                {
+                  "id": "straight",
+                  "name": "Straight",
+                  "children": [
+                    {
+                      "id": "sofa_straight_1",
+                      "name": "Sofa Straight 1",
+                      "asset": {
+                        "elementType": "furniture",
+                        "model": "/models/Furnish/Living Room/Sofas/Straight/Sofa_Straight_1.glb",
+                        "footprint": {
+                          "widthM": 1.0,
+                          "depthM": 1.0,
+                          "heightM": 1.0
+                        }
+                      },
+                      "thumbnail": "/models/library/thumbs/Sofa_Straight_1.png"
+                    },
+                    {
+                      "id": "sofa_straight_2",
+                      "name": "Sofa Straight 2",
+                      "asset": {
+                        "elementType": "furniture",
+                        "model": "/models/Furnish/Living Room/Sofas/Straight/Sofa_Straight_2.glb",
+                        "footprint": {
+                          "widthM": 1.0,
+                          "depthM": 1.0,
+                          "heightM": 1.0
+                        }
+                      },
+                      "thumbnail": "/models/library/thumbs/Sofa_Straight_2.png"
+                    },
+                    {
+                      "id": "sofa_straight_3",
+                      "name": "Sofa Straight 3",
+                      "asset": {
+                        "elementType": "furniture",
+                        "model": "/models/Furnish/Living Room/Sofas/Straight/Sofa_Straight_3.glb",
+                        "footprint": {
+                          "widthM": 1.0,
+                          "depthM": 1.0,
+                          "heightM": 1.0
+                        }
+                      },
+                      "thumbnail": "/models/library/thumbs/Sofa_Straight_3.png"
+                    },
+                    {
+                      "id": "sofa_straight_4",
+                      "name": "Sofa Straight 4",
+                      "asset": {
+                        "elementType": "furniture",
+                        "model": "/models/Furnish/Living Room/Sofas/Straight/Sofa_Straight_4.glb",
+                        "footprint": {
+                          "widthM": 1.0,
+                          "depthM": 1.0,
+                          "heightM": 1.0
+                        }
+                      },
+                      "thumbnail": "/models/library/thumbs/Sofa_Straight_4.png"
+                    },
+                    {
+                      "id": "sofa_straight_5",
+                      "name": "Sofa Straight 5",
+                      "asset": {
+                        "elementType": "furniture",
+                        "model": "/models/Furnish/Living Room/Sofas/Straight/Sofa_Straight_5.glb",
+                        "footprint": {
+                          "widthM": 1.0,
+                          "depthM": 1.0,
+                          "heightM": 1.0
+                        }
+                      },
+                      "thumbnail": "/models/library/thumbs/Sofa_Straight_5.png"
+                    },
+                    {
+                      "id": "sofa_straight_6",
+                      "name": "Sofa Straight 6",
+                      "asset": {
+                        "elementType": "furniture",
+                        "model": "/models/Furnish/Living Room/Sofas/Straight/Sofa_Straight_6.glb",
+                        "footprint": {
+                          "widthM": 1.0,
+                          "depthM": 1.0,
+                          "heightM": 1.0
+                        }
+                      },
+                      "thumbnail": "/models/library/thumbs/Sofa_Straight_6.png"
+                    }
+                  ],
+                  "thumbnail": "/models/library/category_thumbs/straight.jpg"
+                }
+              ],
+              "thumbnail": "/models/library/category_thumbs/sofas.jpg"
+            },
+            {
+              "id": "storage",
+              "name": "Storage",
+              "children": [
+                {
+                  "id": "shelves",
+                  "name": "Shelves",
+                  "children": [
+                    {
+                      "id": "floor",
+                      "name": "Floor",
+                      "children": [
+                        {
+                          "id": "bookshelf_01",
+                          "name": "Bookshelf",
+                          "thumbnail": "/models/library/thumbs/bookshelf_01.png",
+                          "asset": {
+                            "elementType": "furniture",
+                            "model": "/models/Furnish/Living Room/Storage/Shelves/Floor/bookshelf_01.glb",
+                            "footprint": {
+                              "widthM": 0.9,
+                              "depthM": 0.3,
+                              "heightM": 1.8
+                            }
+                          }
+                        },
+                        {
+                          "id": "shelf",
+                          "name": "Shelf",
+                          "asset": {
+                            "elementType": "furniture",
+                            "model": "/models/Furnish/Living Room/Storage/Shelves/Floor/Shelf.glb",
+                            "footprint": {
+                              "widthM": 1.0,
+                              "depthM": 1.0,
+                              "heightM": 1.0
+                            }
+                          },
+                          "thumbnail": "/models/library/thumbs/Shelf.png"
+                        },
+                        {
+                          "id": "shelf_boxes",
+                          "name": "Shelf Boxes",
+                          "asset": {
+                            "elementType": "furniture",
+                            "model": "/models/Furnish/Living Room/Storage/Shelves/Floor/Shelf_Boxes.glb",
+                            "footprint": {
+                              "widthM": 1.0,
+                              "depthM": 1.0,
+                              "heightM": 1.0
+                            }
+                          },
+                          "thumbnail": "/models/library/thumbs/Shelf_Boxes.png"
+                        },
+                        {
+                          "id": "shelf_boxes_short",
+                          "name": "Shelf Boxes Short",
+                          "asset": {
+                            "elementType": "furniture",
+                            "model": "/models/Furnish/Living Room/Storage/Shelves/Floor/Shelf_Boxes_Short.glb",
+                            "footprint": {
+                              "widthM": 1.0,
+                              "depthM": 1.0,
+                              "heightM": 1.0
+                            }
+                          },
+                          "thumbnail": "/models/library/thumbs/Shelf_Boxes_Short.png"
+                        },
+                        {
+                          "id": "shelf_round",
+                          "name": "Shelf Round",
+                          "asset": {
+                            "elementType": "furniture",
+                            "model": "/models/Furnish/Living Room/Storage/Shelves/Floor/Shelf_Round.glb",
+                            "footprint": {
+                              "widthM": 1.0,
+                              "depthM": 1.0,
+                              "heightM": 1.0
+                            }
+                          },
+                          "thumbnail": "/models/library/thumbs/Shelf_Round.png"
+                        },
+                        {
+                          "id": "shelf_vertical",
+                          "name": "Shelf Vertical",
+                          "asset": {
+                            "elementType": "furniture",
+                            "model": "/models/Furnish/Living Room/Storage/Shelves/Floor/Shelf_Vertical.glb",
+                            "footprint": {
+                              "widthM": 1.0,
+                              "depthM": 1.0,
+                              "heightM": 1.0
+                            }
+                          },
+                          "thumbnail": "/models/library/thumbs/Shelf_Vertical.png"
+                        },
+                        {
+                          "id": "shelf_vintage",
+                          "name": "Shelf Vintage",
+                          "asset": {
+                            "elementType": "furniture",
+                            "model": "/models/Furnish/Living Room/Storage/Shelves/Floor/Shelf_Vintage.glb",
+                            "footprint": {
+                              "widthM": 1.0,
+                              "depthM": 1.0,
+                              "heightM": 1.0
+                            }
+                          },
+                          "thumbnail": "/models/library/thumbs/Shelf_Vintage.png"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "tv_stands",
+                  "name": "TV stands",
+                  "children": [
+                    {
+                      "id": "tv_stand",
+                      "name": "TV Stand",
+                      "asset": {
+                        "elementType": "furniture",
+                        "model": "/models/Furnish/Living Room/Storage/TV stands/TV_Stand.glb",
+                        "footprint": {
+                          "widthM": 1.0,
+                          "depthM": 1.0,
+                          "heightM": 1.0
+                        }
+                      },
+                      "thumbnail": "/models/library/thumbs/TV_Stand.png"
+                    }
+                  ]
+                }
+              ],
+              "thumbnail": "/models/library/category_thumbs/storage.jpg"
+            }
+          ],
+          "thumbnail": "/models/library/category_thumbs/living_room.jpg"
+        },
+        {
+          "id": "office",
+          "name": "Office",
+          "children": [
+            {
+              "id": "chairs",
+              "name": "Chairs",
+              "children": [
+                {
+                  "id": "office_chair",
+                  "name": "Office Chair",
+                  "asset": {
+                    "elementType": "furniture",
+                    "model": "/models/Furnish/Office/Chairs/Office_Chair.glb",
+                    "footprint": {
+                      "widthM": 1.0,
+                      "depthM": 1.0,
+                      "heightM": 1.0
+                    }
+                  },
+                  "thumbnail": "/models/library/thumbs/Office_Chair.png"
+                },
+                {
+                  "id": "office_chair_1",
+                  "name": "Office Chair 1",
+                  "asset": {
+                    "elementType": "furniture",
+                    "model": "/models/Furnish/Office/Chairs/Office_Chair_1.glb",
+                    "footprint": {
+                      "widthM": 1.0,
+                      "depthM": 1.0,
+                      "heightM": 1.0
+                    }
+                  },
+                  "thumbnail": "/models/library/thumbs/Office_Chair_1.png"
+                },
+                {
+                  "id": "office_chair_2",
+                  "name": "Office Chair 2",
+                  "asset": {
+                    "elementType": "furniture",
+                    "model": "/models/Furnish/Office/Chairs/Office_Chair_2.glb",
+                    "footprint": {
+                      "widthM": 1.0,
+                      "depthM": 1.0,
+                      "heightM": 1.0
+                    }
+                  },
+                  "thumbnail": "/models/library/thumbs/Office_Chair_2.png"
+                },
+                {
+                  "id": "office_chair_3",
+                  "name": "Office Chair 3",
+                  "asset": {
+                    "elementType": "furniture",
+                    "model": "/models/Furnish/Office/Chairs/Office_Chair_3.glb",
+                    "footprint": {
+                      "widthM": 1.0,
+                      "depthM": 1.0,
+                      "heightM": 1.0
+                    }
+                  },
+                  "thumbnail": "/models/library/thumbs/Office_Chair_3.png"
+                },
+                {
+                  "id": "office_chair_4",
+                  "name": "Office Chair 4",
+                  "asset": {
+                    "elementType": "furniture",
+                    "model": "/models/Furnish/Office/Chairs/Office_Chair_4.glb",
+                    "footprint": {
+                      "widthM": 1.0,
+                      "depthM": 1.0,
+                      "heightM": 1.0
+                    }
+                  },
+                  "thumbnail": "/models/library/thumbs/Office_Chair_4.png"
+                },
+                {
+                  "id": "office_chair_5",
+                  "name": "Office Chair 5",
+                  "asset": {
+                    "elementType": "furniture",
+                    "model": "/models/Furnish/Office/Chairs/Office_Chair_5.glb",
+                    "footprint": {
+                      "widthM": 1.0,
+                      "depthM": 1.0,
+                      "heightM": 1.0
+                    }
+                  },
+                  "thumbnail": "/models/library/thumbs/Office_Chair_5.png"
+                },
+                {
+                  "id": "office_chair_6",
+                  "name": "Office Chair 6",
+                  "asset": {
+                    "elementType": "furniture",
+                    "model": "/models/Furnish/Office/Chairs/Office_Chair_6.glb",
+                    "footprint": {
+                      "widthM": 1.0,
+                      "depthM": 1.0,
+                      "heightM": 1.0
+                    }
+                  },
+                  "thumbnail": "/models/library/thumbs/Office_Chair_6.png"
+                },
+                {
+                  "id": "office_chair_7",
+                  "name": "Office Chair 7",
+                  "asset": {
+                    "elementType": "furniture",
+                    "model": "/models/Furnish/Office/Chairs/Office_Chair_7.glb",
+                    "footprint": {
+                      "widthM": 1.0,
+                      "depthM": 1.0,
+                      "heightM": 1.0
+                    }
+                  },
+                  "thumbnail": "/models/library/thumbs/Office_Chair_7.png"
+                },
+                {
+                  "id": "office_chair_8",
+                  "name": "Office Chair 8",
+                  "asset": {
+                    "elementType": "furniture",
+                    "model": "/models/Furnish/Office/Chairs/Office_Chair_8.glb",
+                    "footprint": {
+                      "widthM": 1.0,
+                      "depthM": 1.0,
+                      "heightM": 1.0
+                    }
+                  },
+                  "thumbnail": "/models/library/thumbs/Office_Chair_8.png"
+                }
+              ],
+              "thumbnail": "/models/library/category_thumbs/chairs.jpg"
+            },
+            {
+              "id": "desks",
+              "name": "Desks",
+              "children": [
+                {
+                  "id": "office_desk",
+                  "name": "Office Desk",
+                  "asset": {
+                    "elementType": "furniture",
+                    "model": "/models/Furnish/Office/Desks/Office_Desk.glb",
+                    "footprint": {
+                      "widthM": 1.0,
+                      "depthM": 1.0,
+                      "heightM": 1.0
+                    }
+                  },
+                  "thumbnail": "/models/library/thumbs/Office_Desk.png"
+                },
+                {
+                  "id": "office_desk_1",
+                  "name": "Office Desk 1",
+                  "asset": {
+                    "elementType": "furniture",
+                    "model": "/models/Furnish/Office/Desks/Office_Desk_1.glb",
+                    "footprint": {
+                      "widthM": 1.0,
+                      "depthM": 1.0,
+                      "heightM": 1.0
+                    }
+                  },
+                  "thumbnail": "/models/library/thumbs/Office_Desk_1.png"
+                },
+                {
+                  "id": "office_desk_2",
+                  "name": "Office Desk 2",
+                  "asset": {
+                    "elementType": "furniture",
+                    "model": "/models/Furnish/Office/Desks/Office_Desk_2.glb",
+                    "footprint": {
+                      "widthM": 1.0,
+                      "depthM": 1.0,
+                      "heightM": 1.0
+                    }
+                  },
+                  "thumbnail": "/models/library/thumbs/Office_Desk_2.png"
+                },
+                {
+                  "id": "office_desk_5",
+                  "name": "Office Desk 5",
+                  "asset": {
+                    "elementType": "furniture",
+                    "model": "/models/Furnish/Office/Desks/Office_Desk_5.glb",
+                    "footprint": {
+                      "widthM": 1.0,
+                      "depthM": 1.0,
+                      "heightM": 1.0
+                    }
+                  },
+                  "thumbnail": "/models/library/thumbs/Office_Desk_5.png"
+                },
+                {
+                  "id": "study",
+                  "name": "Study",
+                  "asset": {
+                    "elementType": "furniture",
+                    "model": "/models/Furnish/Office/Desks/study.glb",
+                    "footprint": {
+                      "widthM": 1.0,
+                      "depthM": 1.0,
+                      "heightM": 1.0
+                    }
+                  },
+                  "thumbnail": "/models/library/thumbs/study.png"
+                },
+                {
+                  "id": "study_1",
+                  "name": "Study 1",
+                  "asset": {
+                    "elementType": "furniture",
+                    "model": "/models/Furnish/Office/Desks/study_1.glb",
+                    "footprint": {
+                      "widthM": 1.0,
+                      "depthM": 1.0,
+                      "heightM": 1.0
+                    }
+                  },
+                  "thumbnail": "/models/library/thumbs/study_1.png"
+                }
+              ],
+              "thumbnail": "/models/library/category_thumbs/desks.jpg"
+            },
+            {
+              "id": "office_sets",
+              "name": "Office Sets",
+              "children": [
+                {
+                  "id": "conference_table",
+                  "name": "Conference Table",
+                  "asset": {
+                    "elementType": "furniture",
+                    "model": "/models/Furnish/Office/Office Sets/Conference_Table.glb",
+                    "footprint": {
+                      "widthM": 1.0,
+                      "depthM": 1.0,
+                      "heightM": 1.0
+                    },
+                    "includesSeating": true
+                  },
+                  "thumbnail": "/models/library/thumbs/Conference_Table.png"
+                },
+                {
+                  "id": "conference_table_1",
+                  "name": "Conference Table 1",
+                  "asset": {
+                    "elementType": "furniture",
+                    "model": "/models/Furnish/Office/Office Sets/Conference_Table_1.glb",
+                    "footprint": {
+                      "widthM": 1.0,
+                      "depthM": 1.0,
+                      "heightM": 1.0
+                    },
+                    "includesSeating": true
+                  },
+                  "thumbnail": "/models/library/thumbs/Conference_Table_1.png"
+                },
+                {
+                  "id": "conference_table_2",
+                  "name": "Conference Table 2",
+                  "asset": {
+                    "elementType": "furniture",
+                    "model": "/models/Furnish/Office/Office Sets/Conference_Table_2.glb",
+                    "footprint": {
+                      "widthM": 1.0,
+                      "depthM": 1.0,
+                      "heightM": 1.0
+                    },
+                    "includesSeating": true
+                  },
+                  "thumbnail": "/models/library/thumbs/Conference_Table_2.png"
+                }
+              ],
+              "thumbnail": "/models/library/category_thumbs/office_sets.png"
+            }
+          ],
+          "thumbnail": "/models/library/category_thumbs/office.jpg"
+        },
+        {
+          "id": "uncategorized",
+          "name": "Uncategorized",
+          "children": [
+            {
+              "id": "glass_panel",
+              "name": "Glass Panel",
+              "asset": {
+                "elementType": "furniture",
+                "model": "/models/Glass_Panel.glb",
+                "footprint": {
+                  "widthM": 1.0,
+                  "depthM": 1.0,
+                  "heightM": 1.0
+                }
+              },
+              "thumbnail": "/models/library/thumbs/Glass_Panel.png"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

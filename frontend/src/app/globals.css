@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #13131f;
+  color: #e2e8f0;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  overflow: hidden;
+}
+
+/* Utility classes used in toolbar/panel */
+@layer components {
+  .topbtn {
+    @apply flex items-center justify-center w-8 h-8 rounded text-base
+           text-gray-400 hover:text-white hover:bg-white/10
+           transition-colors cursor-pointer select-none disabled:cursor-not-allowed;
+  }
+
+  .prop-input {
+    @apply w-full bg-[#1e1e2e] border border-[#2e2e4a] rounded px-2 py-1
+           text-xs text-white focus:outline-none focus:border-blue-400
+           transition-colors;
+  }
+}
